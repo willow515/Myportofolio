@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portofolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --ink:#0a0b09; --moss:#14271b; --moss2:#1c3825; --card:#0d1510;
+  --gold:#d9b26f; --gold-d:#8c6e3a; --rose:#d98a96; --blood:#7a1a2a; --text:#e9e1cf; --mute:#a9a490;
+  --head:'Pirata One','Times New Roman',serif; --body:'Barlow','Segoe UI',sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;overflow-x:hidden;background:var(--ink);color:var(--text);font:16px/1.6 var(--body);
+  background-image:radial-gradient(560px 560px at 80% 11%,rgba(214,70,84,.38),rgba(214,70,84,.1) 50%,transparent 72%),radial-gradient(900px 640px at 6% 38%,rgba(22,96,90,.5),transparent 70%),radial-gradient(800px 620px at 94% 62%,rgba(20,84,72,.45),transparent 70%),radial-gradient(700px 520px at 18% 86%,rgba(150,30,55,.3),transparent 70%),radial-gradient(900px 420px at 50% 100%,rgba(122,26,42,.45),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.5;animation:tw 7s ease-in-out infinite;background:radial-gradient(1px 1px at 20px 30px,rgba(255,220,225,.85),transparent),radial-gradient(1.5px 1.5px at 90px 120px,rgba(217,178,111,.85),transparent),radial-gradient(1px 1px at 160px 60px,rgba(255,200,210,.7),transparent),radial-gradient(1px 1px at 130px 160px,rgba(190,240,230,.6),transparent);background-size:200px 190px}
+@keyframes tw{50%{opacity:.22}}@media (prefers-reduced-motion:reduce){body::after{animation:none}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--ink);z-index:30}
+h1,h2,h3{font-family:var(--head);font-weight:400;color:var(--gold);margin:0;letter-spacing:.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px max(5vw,20px);background:rgba(10,11,9,.88);backdrop-filter:blur(6px);border-bottom:1px solid rgba(217,178,111,.2)}
+nav b{font-family:var(--head);font-weight:400;font-size:1.5rem;color:var(--gold)}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:4px 0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none}nav ul::-webkit-scrollbar{display:none}@media (min-width:721px){nav ul{overflow:visible}}
+nav li a{font-family:var(--head);font-size:1.15rem;color:var(--text);padding:2px 0;border-bottom:2px solid transparent;white-space:nowrap}
+nav li a:hover{color:var(--gold);text-decoration: none;}
+
+section{position:relative;isolation:isolate;padding:64px max(5vw,20px) 24px;max-width:1180px;margin:0 auto}
+.deco{position:absolute;z-index:-1;pointer-events:none;opacity:.62!important;height:auto}.deco.flip{transform:scaleX(-1)}
+.sun{position:absolute;z-index:-1;pointer-events:none;top:70px;right:7vw;width:min(300px,55vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 34%,#f4a3ab,#c4586f 52%,#7a1a2a);opacity:.5;box-shadow:0 0 110px 40px rgba(214,70,84,.32)}
+@media (max-width:720px){.deco{opacity:.3!important;width:240px!important}}
+.title{display:flex;align-items:center;gap:22px;margin-bottom:30px;flex-wrap:wrap}
+.title h2{font-size:clamp(2.2rem,5vw,3.2rem)}
+.moons{width:290px;height:auto;flex:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px}
+.thorn{height:26px;margin:46px 0 0;background:
+  radial-gradient(circle at 50% 50%,var(--gold) 2px,transparent 3px) 0 50%/36px 26px repeat-x,
+  linear-gradient(var(--gold-d),var(--gold-d)) 0 50%/100% 1px no-repeat;opacity:.55}
+
+/* kartu berbingkai emas */
+.card{position:relative;background:var(--card);border:2px solid var(--gold-d);border-radius:10px;padding:14px;
+  box-shadow:0 0 0 5px var(--ink),0 0 0 6.5px rgba(217,178,111,.55),0 18px 34px rgba(0,0,0,.55);
+  transition:transform .35s cubic-bezier(.3,1.4,.5,1),box-shadow .35s;transform-origin:50% 60%}
+.card:hover{transform:rotate(2.5deg) translateY(-4px);box-shadow:0 0 0 5px var(--ink),0 0 0 6.5px var(--gold),0 24px 40px rgba(122,26,42,.45)}
+.card::before,.card::after{content:"";position:absolute;width:48px;height:48px;background:var(--rose-img) center/contain no-repeat;filter:drop-shadow(0 2px 4px rgba(0,0,0,.6));pointer-events:none;z-index:2}
+.card::before{top:-20px;left:-18px}.card::after{top:-20px;right:-18px;transform:scaleX(-1)}
+.arch{border-radius:999px 999px 10px 10px;text-align:center}.arch::before,.arch::after{top:38px}#g-pendidikan .card::before,#g-pendidikan .card::after{display:none}
+.card h3{font-size:1.55rem;margin:12px 0 2px}
+.card p{margin:4px 0 10px;color:var(--mute)}
+.meta{color:var(--text);font-size:.95rem}
+[contenteditable]{outline:none;border-radius:4px}
+[contenteditable]:hover{background:rgba(217,178,111,.08)}
+[contenteditable]:focus{background:rgba(217,178,111,.14)}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tags span{border:1px solid var(--gold-d);border-radius:99px;padding:2px 14px;font-size:.9rem;background:#0b1410}
+.x{display: none;position:absolute;top:10px;right:10px;z-index:3;width:28px;height:28px;border-radius:50%;border:1px solid var(--gold-d);background:rgba(10,11,9,.85);color:var(--gold);cursor:pointer;font-size:1rem;line-height:1;opacity:0;transition:opacity .2s}
+.card:hover .x,.x:focus-visible{opacity:1}
+.add{display: none;margin-top:26px;font:inherit;font-family:var(--head);font-size:1.15rem;color:var(--gold);background:transparent;border:1px dashed var(--gold-d);border-radius:8px;padding:8px 20px;cursor:pointer}
+.add:hover{background:rgba(217,178,111,.1)}
+
+/* slot gambar */
+.slot{position:relative;display:grid;place-items:center;overflow:hidden;cursor:pointer;border-radius:6px;background:linear-gradient(135deg,#0f1f16,#1b0d12);border:1px dashed rgba(217,178,111,.45);color:var(--mute);text-align:center;font-size:.9rem;aspect-ratio:16/9}
+.slot:hover,.slot.drag{border-color:var(--rose);color:var(--rose)}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot.has{border-style:solid;border-color:transparent}.slot.has span{display:none}
+.slot span{padding:10px;pointer-events:none}
+.slot.tall{aspect-ratio:9/16;border-radius:999px 999px 0 0}.slot.sq{aspect-ratio:1/1;width:46%;margin:28px auto 0;border-radius:50%}.slot.cert{aspect-ratio:4/3}
+
+/* profile */
+#profile{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:46px;align-items:center;padding-top:46px}
+#profile h1{font-size:clamp(3rem,7vw,4.6rem);line-height:1}
+.role{font-size:1.25rem;margin:6px 0 12px}
+.bio{max-width:58ch;color:var(--text)}
+.social{display:flex;gap:12px;align-items:center;margin-top:20px;flex-wrap:wrap}
+.social a.ic{width:42px;height:42px;border-radius:50%;background:var(--gold);color:var(--ink);display:grid;place-items:center;transition:transform .25s}
+.social a.ic:hover{transform:rotate(12deg) scale(1.08)}
+.social svg{width:20px;height:20px;fill:currentColor}
+.btn{border:1px solid var(--gold);border-radius:8px;padding:8px 22px;background:#16241c;color:var(--text);font-family:var(--head);font-size:1.15rem}
+.btn:hover{background:var(--gold);color:var(--ink)}
+
+/* pengalaman */
+.timeline{position:relative;display:grid;gap:34px;padding-left:34px}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--blood))}
+.timeline .card::marker{content:""}
+.timeline .card{margin-left:0}
+.timeline .dot{position:absolute;left:-34px;top:26px;width:18px;height:18px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px var(--ink),0 0 14px rgba(217,178,111,.7)}
+.timeline ul{margin:6px 0 0;padding-left:20px;color:var(--text)}
+.timeline li{margin:3px 0}
+
+footer{margin-top:70px;padding:44px max(5vw,20px) 24px;background:linear-gradient(transparent,rgba(122,26,42,.28)),#080907;border-top:1px solid rgba(217,178,111,.3)}
+.fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{font-family:var(--head);font-weight:400;color:var(--gold);font-size:1.3rem;margin:0 0 8px}
+footer p,footer li{margin:4px 0;color:var(--mute)}footer ul{list-style:none;margin:0;padding:0}
+footer a:hover{color:var(--rose)}
+.copy{max-width:1180px;margin:30px auto 0;padding-top:14px;border-top:1px solid rgba(217,178,111,.2);display:flex;justify-content:center;gap:10px;flex-wrap:wrap;color:var(--mute);font-size:.88rem}
+
+@media (max-width:720px){
+  #profile{grid-template-columns:1fr}
+  #profile .card{max-width:280px;margin:0 auto}
+  .fgrid{grid-template-columns:1fr}
+  nav b{display:none}
+}
+@media (prefers-reduced-motion:reduce){.card,.social a.ic{transition:none}.card:hover{transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<radialGradient id="mg" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#f3c0c8"/><stop offset="1" stop-color="#c4586f"/></radialGradient>
+<radialGradient id="mgp" cx=".35" cy=".35" r=".9"><stop offset="0" stop-color="#f6e3da"/><stop offset="1" stop-color="#d49aa3"/></radialGradient>
+<radialGradient id="mgb" cx=".38" cy=".34" r=".85"><stop offset="0" stop-color="#ea8f88"/><stop offset="1" stop-color="#9c2c3e"/></radialGradient>
+<path id="cs1" d="M0-14A14 14 0 0 0 0 14A10 14 0 0 1 0-14Z"/><path id="cs2" d="M0-14A14 14 0 0 0 0 14A4 14 0 0 1 0-14Z"/><path id="gb" d="M0-14A14 14 0 0 0 0 14A8 14 0 0 0 0-14Z"/><path id="sp" d="M0-4L1-1 4 0 1 1 0 4-1 1-4 0-1-1Z"/>
+<symbol id="moons2" viewBox="0 0 320 64">
+<g fill="#0b1412" fill-opacity=".55" stroke="#c9a36a" stroke-opacity=".35" stroke-width=".6"><circle cx="24" cy="32" r="14"/><circle cx="66" cy="32" r="14"/><circle cx="112" cy="32" r="14"/><circle cx="208" cy="32" r="14"/><circle cx="254" cy="32" r="14"/><circle cx="296" cy="32" r="14"/></g>
+<g fill="url(#mgp)" stroke="#c9a36a" stroke-width=".6"><use href="#cs1" transform="translate(24 32)"/><use href="#cs2" transform="translate(66 32)"/><use href="#gb" transform="translate(112 32)"/><use href="#gb" transform="translate(208 32) scale(-1 1)"/><use href="#cs2" transform="translate(254 32) scale(-1 1)"/><use href="#cs1" transform="translate(296 32) scale(-1 1)"/></g>
+<circle cx="160" cy="32" r="31" fill="#e5857f" opacity=".16"/><circle cx="160" cy="32" r="22" fill="url(#mg)"/>
+
+<g fill="#d9b26f"><use href="#sp" x="45" y="32"/><use href="#sp" x="89" y="32"/><use href="#sp" x="132" y="32"/><use href="#sp" x="188" y="32"/><use href="#sp" x="231" y="32"/><use href="#sp" x="275" y="32"/></g></symbol>
+<g id="rs"><circle r="26" fill="#b8475f" stroke="#7a2a40"/><path d="M-22-2C-22-16-10-24 0-22C-6-14-8 0-4 12C-16 12-22 6-22-2Z" fill="#d4697e"/><path d="M22-2C22-16 10-24 0-22C6-14 8 0 4 12C16 12 22 6 22-2Z" fill="#d4697e"/><circle r="15" fill="#e58c9c" stroke="#7a2a40" stroke-width=".8"/><path d="M0-8C-6-8-8 0-4 4C0 8 8 6 8-1C8-7 2-11-4-8" fill="none" stroke="#9c3350" stroke-width="1.6"/></g>
+<g id="lt"><g fill="#f6efe0" stroke="#c9b48e" stroke-width=".8"><path d="M0 0C-14-10-14-30 0-42C14-30 14-10 0 0Z" transform="rotate(-70)"/><path d="M0 0C-14-10-14-30 0-42C14-30 14-10 0 0Z" transform="rotate(70)"/><path d="M0 0C-14-10-14-30 0-42C14-30 14-10 0 0Z" transform="rotate(-35)"/><path d="M0 0C-14-10-14-30 0-42C14-30 14-10 0 0Z" transform="rotate(35)"/><path d="M0 0C-14-10-14-30 0-42C14-30 14-10 0 0Z"/></g><ellipse cy="-8" rx="7" ry="4" fill="#e8c35a"/></g>
+<symbol id="briar" viewBox="0 0 400 520">
+<g fill="none" stroke="#a89a52" stroke-width="3" stroke-linecap="round"><path d="M390 0C330 60 370 130 300 180C230 230 280 300 200 340C130 375 150 450 70 500"/><path d="M300 180C260 170 240 140 262 118C280 102 302 114 296 132"/><path d="M200 340C160 330 150 300 172 284C190 272 208 284 202 300"/><path d="M70 500C40 495 25 470 40 455C52 444 68 452 64 466"/><path d="M350 95C378 108 392 135 380 162"/></g>
+<g fill="#3f6e4a" stroke="#27482f" stroke-width=".8"><use href="#lf" transform="translate(352 40) rotate(60)"/><use href="#lf" transform="translate(336 120) rotate(-150)"/><use href="#lf" transform="translate(300 182) rotate(20)"/><use href="#lf" transform="translate(262 262) rotate(-160)"/><use href="#lf" transform="translate(232 300) rotate(30)"/><use href="#lf" transform="translate(172 360) rotate(-150)"/><use href="#lf" transform="translate(140 410) rotate(40)"/><use href="#lf" transform="translate(100 470) rotate(-140)"/></g>
+<g fill="#d98a96"><circle cx="296" cy="132" r="6"/><circle cx="202" cy="300" r="5"/><circle cx="64" cy="466" r="5"/><circle cx="380" cy="162" r="5"/><ellipse cx="360" cy="260" rx="6" ry="3" transform="rotate(30 360 260)"/><ellipse cx="90" cy="300" rx="5" ry="2.5" transform="rotate(-20 90 300)"/></g>
+<use href="#rs" transform="translate(318 150)"/><use href="#rs" transform="translate(226 282) scale(.8)"/><use href="#rs" transform="translate(108 432) scale(.75)"/><use href="#lt" transform="translate(300 338) rotate(25) scale(.95)"/><use href="#lt" transform="translate(150 330) rotate(-35) scale(.7)"/></symbol>
+<symbol id="tree" viewBox="0 0 300 520">
+<g fill="none" stroke="#a89a52" stroke-width="3" stroke-linecap="round"><path d="M20 0C80 70 30 140 100 200C170 260 120 330 200 380C250 410 230 470 290 520"/><path d="M100 200C140 190 160 160 140 140C125 125 105 135 110 150"/><path d="M200 380C240 370 250 340 228 325C212 314 196 326 202 340"/><path d="M30 70C60 90 70 120 56 150"/></g>
+<g fill="#3f6e4a" stroke="#27482f" stroke-width=".8"><use href="#lf" transform="translate(40 30) rotate(-20)"/><use href="#lf" transform="translate(62 110) rotate(160)"/><use href="#lf" transform="translate(130 232) rotate(-20)"/><use href="#lf" transform="translate(150 270) rotate(150)"/><use href="#lf" transform="translate(180 340) rotate(-30)"/><use href="#lf" transform="translate(235 420) rotate(150)"/><use href="#lf" transform="translate(268 490) rotate(-130)"/></g>
+<g fill="#d98a96"><circle cx="110" cy="150" r="6"/><circle cx="202" cy="340" r="5"/><circle cx="56" cy="150" r="5"/></g>
+<use href="#rs" transform="translate(88 190) scale(.9)"/><use href="#rs" transform="translate(214 372) scale(.8)"/><use href="#lt" transform="translate(60 300) rotate(-20)"/><use href="#lt" transform="translate(255 440) rotate(30) scale(.8)"/></symbol>
+<path id="lf" d="M0 0C8-11 24-11 32 0C24 11 8 11 0 0Z"/>
+<g id="ap"><circle r="15" fill="#8c1f33"/><circle cx="-5" cy="-5" r="4" fill="#d98a96" opacity=".5"/><path d="M0-15C0-22 3-25 6-27" stroke="#4a3a24" stroke-width="2" fill="none"/><use href="#lf" transform="translate(2 -20) rotate(-30) scale(.5)" fill="#2f5a3a"/></g>
+<symbol id="moons" viewBox="0 0 320 64"><g fill="#d98a96">
+
+<g transform="translate(56 32) scale(-1 1)"><path d="M0-14A14 14 0 0 0 0 14A5 14 0 0 1 0-14Z"/></g>
+<circle cx="108" cy="32" r="14" fill="none" stroke="#d98a96" opacity=".4"/><path transform="translate(108 32)" d="M0-14A14 14 0 0 1 0 14Z"/>
+<circle cx="160" cy="32" r="29" opacity=".16"/><circle cx="160" cy="32" r="22" fill="url(#mg)"/>
+<circle cx="212" cy="32" r="14" fill="none" stroke="#d98a96" opacity=".4"/><path transform="translate(212 32)" d="M0-14A14 14 0 0 0 0 14Z"/>
+<g transform="translate(264 32)"><path d="M0-14A14 14 0 0 0 0 14A5 14 0 0 1 0-14Z"/></g></g></symbol>
+<symbol id="briar-old" viewBox="0 0 400 520">
+<g fill="none" stroke="#2f5a3a" stroke-width="5" stroke-linecap="round"><path d="M390 0C310 70 350 150 260 205C175 255 215 340 120 390C65 420 80 490 20 520"/><path d="M260 205C300 215 330 260 320 300" stroke-width="3"/><path d="M120 390C150 400 190 380 200 350C206 330 190 318 176 326" stroke-width="3"/></g>
+<g fill="#8c6e3a"><path d="M335 95l16-9-6 16z"/><path d="M300 160l-18-4 12 13z"/><path d="M232 218l-6 17 13-9z"/><path d="M205 292l16 6-11 10z"/><path d="M175 325l-18 2 11 12z"/><path d="M120 385l-4 18 13-10z"/><path d="M85 450l16-3-9 13z"/><path d="M315 270l16 2-8 12z"/></g>
+<g fill="#2f5a3a"><use href="#lf" transform="translate(355 60) rotate(40)"/><use href="#lf" transform="translate(262 207) rotate(-30)"/><use href="#lf" transform="translate(205 300) rotate(150)"/><use href="#lf" transform="translate(118 388) rotate(120)"/><use href="#lf" transform="translate(60 455) rotate(200)"/><use href="#lf" transform="translate(322 298) rotate(80)"/></g>
+<use href="#ap" transform="translate(322 322)"/><use href="#ap" transform="translate(180 352)"/><use href="#ap" transform="translate(92 470)"/><use href="#fl" transform="translate(292 150) scale(.9)"/><use href="#fl" transform="translate(140 290) scale(.7)"/><use href="#fl" transform="translate(60 395) scale(.6)"/></symbol>
+<symbol id="tree-old" viewBox="0 0 300 520">
+<g fill="none" stroke="#2f5a3a" stroke-linecap="round"><path d="M150 520C150 450 120 410 138 340C152 280 118 230 148 150C158 120 150 90 150 60" stroke-width="16"/><path d="M138 340C100 310 60 320 30 270" stroke-width="8"/><path d="M148 230C200 200 240 215 272 160" stroke-width="8"/><path d="M142 420C190 395 235 405 265 360" stroke-width="7"/><path d="M150 150C110 125 90 90 70 60" stroke-width="6"/><path d="M150 520C120 515 90 500 70 505M150 520C185 515 215 500 238 508" stroke-width="7"/></g>
+<g fill="#2f5a3a"><use href="#lf" transform="translate(150 60) rotate(-80)"/><use href="#lf" transform="translate(70 60) rotate(-130)"/><use href="#lf" transform="translate(110 125) rotate(200)"/><use href="#lf" transform="translate(272 160) rotate(-50)"/><use href="#lf" transform="translate(200 205) rotate(-20)"/><use href="#lf" transform="translate(30 270) rotate(190)"/><use href="#lf" transform="translate(90 312) rotate(160)"/><use href="#lf" transform="translate(265 360) rotate(-30)"/><use href="#lf" transform="translate(190 395) rotate(-10)"/></g>
+<use href="#ap" transform="translate(42 292)"/><use href="#ap" transform="translate(262 182)"/><use href="#ap" transform="translate(255 382)"/><use href="#ap" transform="translate(80 82)"/><use href="#ap" transform="translate(160 86)"/><use href="#fl" transform="translate(70 175) scale(.8)"/><use href="#fl" transform="translate(235 270) scale(.7)"/><use href="#fl" transform="translate(95 440) scale(.6)"/></symbol>
+<g id="fl"><g fill="#f4eee2" stroke="#b9a58f" stroke-width="1"><ellipse cy="-22" rx="16" ry="23"/><ellipse cy="-22" rx="16" ry="23" transform="rotate(72)"/><ellipse cy="-22" rx="16" ry="23" transform="rotate(144)"/><ellipse cy="-22" rx="16" ry="23" transform="rotate(216)"/><ellipse cy="-22" rx="16" ry="23" transform="rotate(288)"/></g><circle r="11" fill="#8c1f33"/><circle r="5" fill="#1b0b10"/><g fill="#3a1a24"><circle cy="-16" r="2"/><circle cx="15" cy="-5" r="2"/><circle cx="9" cy="13" r="2"/><circle cx="-9" cy="13" r="2"/><circle cx="-15" cy="-5" r="2"/></g></g>
+</defs></svg>
+<div class="sun" aria-hidden="true"></div>
+
+<nav>
+  <b >Louis Immanuel Phan</b>
+  <ul>
+    <li><a href="#profile">Profile</a></li>
+    <li><a href="#pendidikan">Pendidikan</a></li>
+    <li><a href="#sertifikat">Sertifikat</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#pengalaman">Pengalaman</a></li>
+  </ul>
+</nav>
+
+<!-- PROFILE -->
+<section id="profile">
+  <svg class="deco" style="right:-60px;top:20px;width:400px" viewBox="0 0 400 520" aria-hidden="true"><use href="#briar" width="400" height="520"/></svg>
+  <div class="card arch">
+    <div class="slot tall"><span>＋ Unggah foto profil<br>(klik atau seret gambar)</span><img src="images/foto portofolio.png" alt="Profile Image"></div>
+  </div>
+  <div>
+    <h1>About Me</h1>
+    <div class="role" >Mahasiswa Universitas Bina Nusantara</div>
+    <p class="bio" >Saya adalah Mahasiswa Sistem Informasi yang berorientasi pada detail, dengan pemahaman & landasan kuat dalam analisis sistem, pemodelan proses bisnis, dan manajemen database. Memiliki keahlian dalam menjembatani kebutuhan bisnis dengan solusi teknis melalui pemodelan UML dan analisis data. Berpengalaman dalam merancang arsitektur sistem yang berfokus pada pengguna, serta memiliki semangat untuk mengoptimalkan alur kerja bisnis melalui solusi TI yang inovatif.</p>
+    <div class="social">
+      <a class="ic" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 22v-8h2.7l.5-3.3h-3.2V8.6c0-.9.4-1.7 1.8-1.7h1.5V4.1S15.5 3.9 14.3 3.9c-2.6 0-4.3 1.6-4.3 4.4v2.4H7.3V14H10v8z"/></svg></a>
+      <a class="ic" href="https://www.instagram.com/louisiplll/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 3h9A4.5 4.5 0 0 1 21 7.5v9a4.5 4.5 0 0 1-4.5 4.5h-9A4.5 4.5 0 0 1 3 16.5v-9A4.5 4.5 0 0 1 7.5 3zm0 1.8A2.7 2.7 0 0 0 4.8 7.5v9a2.7 2.7 0 0 0 2.7 2.7h9a2.7 2.7 0 0 0 2.7-2.7v-9a2.7 2.7 0 0 0-2.7-2.7zM12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 1.8a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4zm4.9-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2z"/></svg></a>
+      <a class="ic" href="#" aria-label="LinkedIn" style="display: none;"><svg viewBox="0 0 24 24"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg></a>
+      <a class="btn" href="#kontak">Hubungi Saya</a>
+    </div>
+  </div>
+</section>
+
+<!-- PENDIDIKAN -->
+<section id="pendidikan">
+  <div class="title"><h2>Pendidikan</h2><img src="images/moon2.png" alt="Education Icon" width="170" ></div>
+  <div class="grid" id="g-pendidikan">
+
+    <article class="card arch">
+      <div class="slot sq"><span>＋ Logo</span><img src="https://yt3.googleusercontent.com/ytc/AIdro_lDMfN8-HnTNHp6dHNvtJC01NXDJPY4Rl4RBZNrpHqY0Q=s900-c-k-c0x00ffffff-no-rj" style="object-fit: fill;" alt="Logo Sekolah"></div>
+      <h3>SMPN 111</h3>
+      <p class="meta">IPA<br>2018 – 2021</p>
+    </article>
+    <article class="card arch">
+      <div class="slot sq"><span>＋ Logo</span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkoC0Qzc_AhcHWzNJexPXY1yTQX8MdhqKljncwrNlBCw&s=10" style="object-fit: fill;" alt="Logo Sekolah"></div>
+      <h3>SMAS Kristen Yusuf</h3>
+      <p class="meta">IPA<br>2021 – 2024</p>
+    </article>
+    <article class="card arch">
+      <div class="slot sq"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVJdWP1vzZ2g-vWKiO1JhqNR5u1YXlaw7OHMDXSnkGjQ&s=10" style="object-fit: contain;" alt="Logo Universitas Bina Nusantara"></div>
+      <h3 >Universitas Bina Nusantara</h3>
+      <p class="meta">Sistem Informasi<br>GPA:3.94/4.00 <br>2024 – now</p>
+    </article>
+    
+  </div>
+  <button class="add" data-add="g-pendidikan">＋ Tambah pendidikan</button>
+  <div class="thorn"></div>
+</section>
+
+<!-- SERTIFIKAT -->
+<section id="sertifikat">
+  
+  <svg class="deco" style="left:-110px;top:0;width:300px;opacity:.3" viewBox="0 0 300 520" aria-hidden="true"><use href="#tree" width="300" height="520"/></svg>
+  <div class="title"><h2>Sertifikat</h2></div>
+  <div class="grid" id="g-sertifikat">
+    <article class="card">
+      <div class="slot cert"><img src="images/sertifikat AI-900.PNG" alt="Sertifikat Microsoft AI-900T00-A"></div>
+      <h3>Sertifikat Microsoft AI-900T00-A Belajar AI dari Dasar</h3>
+      <p>Saya mengikuti kursus ini untuk memperkuat pemahaman saya tentang kecerdasan buatan, termasuk etika dan praktik terbaik dalam pengembangan AI, serta berbagai jenis teknologi AI yang berkembang</p>
+      <p>GreatNusa · Tahun 2026</p>
+    </article>
+    <article class="card">
+      <div class="slot cert"><img src="images/sertifikat Mentoring.PNG" ></div>
+      <h3>Sertifikat Program Mentoring Binus University</h3>
+      <p>Saya mengikuti program mentoring ini untuk mengembangkan keterampilan komunikasi dan sosial saya melalui interaksi langsung dengan mentee mahasiswa saya. Melalui program ini saya membimbing & mengajar mentee saya agar dapat menyesuaikan diri dengan lingkungan akademis kampus.</p>
+      <p>Universitas Bina Nusantara · Tahun 2026</p>
+    </article>
+    <article class="card">
+      <div class="slot cert"><img src="images/Sertifikat audit clinic.png"></div>
+      <h3>Sertifikat Project Associate ISASC Audit Clinic</h3>
+      <p>Saya mengikuti workshop ini untuk memperkuat pemahaman saya tentang audit teknologi informasi dan praktik terbaik dalam pengelolaan risiko. Setelah itu saya dan kelompok saya melakukan audit terhadap sistem informasi Client.</p>
+      <p>ISACA · Tahun 2026</p>
+    </article>
+  </div>
+  <button class="add" data-add="g-sertifikat">＋ Tambah sertifikat</button>
+  <div class="thorn"></div>
+</section>
+
+<!-- PROJECT -->
+<section id="project">
+  <svg class="deco flip" style="left:-60px;top:10px;width:360px" viewBox="0 0 400 520" aria-hidden="true"><use href="#briar" width="400" height="520"/></svg>
+  <div class="title"><h2>Project</h2><img src="images/moon2.png" alt="Education Icon" width="170"></div>
+  <div class="grid" id="g-project">
+    <article class="card">
+      <div class="slot"><img src="images/leafcare.PNG" alt="Leaf Care"></div>
+      <h3 >Leaf Care</h3>
+      <p>LeafCare adalah platform seluler manajemen perawatan tanaman terpadu yang dirancang untuk menghubungkan para pencinta tanaman dengan para ahli serta layanan perawatan tanaman. dalam project ini saya membuat ERD, activity diagram ,dan design mockup UI Leafcare. </p>
+      <p><a href="https://drive.google.com/drive/folders/1ZD2PZCiHKNISjBS5htz4sulrdOkRU1Rf?hl=ID" target="_blank">Lihat project</a></p>
+      <div class="tags"><span>Figma</span><span>UML Modeling</span><span>ERD</span><span>Activity Diagram</span><span>Prototyping</span></div>
+    </article>
+    <article class="card">
+      <div class="slot"><img src="images/Aquas.PNG" alt="Aquas"></div>
+      <h3 >Aquas</h3>
+      <p>Aquas adalah platform yang dirancang untuk membantu orang yang hobi memelihara ikan di tengah kesibukan sehari-hari. Aquas juga membantu agar menghubungkan user ke store maupun komunitas hobi ikan lainnya. dalam project ini saya merancang design tampilan UI Aquas. </p>
+      <p><a href="https://drive.google.com/drive/folders/1fNcwQ3JWbIq-j6Tui1Ldh-onDteSW1y8?usp=sharing" target="_blank">Lihat project</a></p>
+      <div class="tags"><span>Figma</span></div>
+    </article>
+    <article class="card">
+      <div class="slot"><img src="images/siaga.PNG"></div>
+      <h3 >Siaga (Team Project)</h3>
+      <p>SIAGA (Sistem Informasi Kelembagaan) adalah sebuah portal resmi yang dikelola oleh Direktorat Kelembagaan, di bawah naungan Direktorat Jenderal Pendidikan Tinggi. Aplikasi berbasis web ini difungsikan secara spesifik sebagai pusat layanan perizinan kelembagaan bagi berbagai perguruan tinggi. Dalam project ini saya menguji performa & fitur-fitur apakah sudah sesuai baik dari frontend maupun backend, kadang membuat dokumen penting seperti FSD. </p>
+      <div class="tags"><span>Figma</span><span>Prototyping</span><span>Database</span></div>
+    </article>
+    <article class="card">
+      <div class="slot"><img src="images/DashboardImage.PNG" alt="Aquas"></div>
+      <h3 >Starbuck Themed Dashboard</h3>
+      <p>Saya menggunakan software tableau untuk membuat dashboard berbasis tema Starbuck. Melalui dasboard ini, saya dapat menampilkan data penjualan dan performa toko secara visual dan interaktif yang memudahkan mengukur KPI dan metrik lainnya. </p>
+      <p><a href="https://drive.google.com/drive/folders/1myK4k1IF3Tq-C5xo2YIJZOjmUSSN4WpC?usp=drive_link" target="_blank">Lihat project</a></p>
+      <div class="tags"><span>Tableau</span><span>Business Analytics</span><span>Business Intelligence</span><span>Data Visualization</span></div>
+    </article>
+    <article class="card">
+      <div class="slot"><img src="images/BinusFlow.PNG" alt="Aquas"></div>
+      <h3 >BinusFlow</h3>
+      <p>sebuah aplikasi web manajemen tugas interaktif yang dibangun menggunakan TypeScript dan React, yang dirancang untuk membantu pengguna mengatur aktivitas sehari-hari serta memantau perkembangan alur kerja. Dalam aplikasi ini,pengguna dapat melakukan kustomisasi warna di menu konfigurasi.</p>
+      <p><a href="https://github.com/willow515/BinusFlow" target="_blank">Lihat project</a></p>
+      <div class="tags"><span>TypeScript</span><span>React.Js</span><span>Context API</span><span>Web Development</span></div>
+    </article>
+    <article class="card">
+      <div class="slot"><img src="images/Rentcar.PNG" alt="Aquas"></div>
+      <h3 >RentCar</h3>
+      <p>sebuah platform penyewaan mobil menyeluruh (end-to-end) yang menggunakan front-end berbasis ASP.NET Core Razor Pages serta back-end berupa RESTful ASP.NET Core Web API yang terhubung ke basis data SQL Server.</p>
+      <p><a href="https://github.com/willow515/RentCar" target="_blank">Lihat project</a></p>
+      <div class="tags"><span>ASP.net core web API</span><span>ASP.net core Razor Page</span><span>JWT authentication</span><span>C#</span><span>rest API</span><span>SQL Server</span></div>
+    </article>
+    <article class="card">
+      <div class="slot"><img src="images/healthtrack.PNG" alt="Aquas"></div>
+      <h3 >Health Track</h3>
+      <p>sebuah aplikasi pemantau kesehatan responsif yang mendukung SDG 3 (Good Health and Well-being). Aplikasi ini membantu pengguna mencatat dan mengelola data kesehatan harian seperti durasi tidur, konsumsi air minum, dan kondisi mood. Fitur utamanya mencakup Riwayat Log Harian, Analisis & Imbauan Kesehatan Otomatis, dan Visualisasi Tren Tidur berbasis grafik interaktif.</p>
+      <p><a href="https://github.com/willow515/HealthCare" target="_blank">Lihat project</a></p>
+      <div class="tags"><span>php</span><span>css</span><span>Javascript</span></div>
+    </article>
+  </div>
+  <button class="add" data-add="g-project">＋ Tambah project</button>
+  <div class="thorn"></div>
+</section>
+
+<!-- PENGALAMAN -->
+<section id="pengalaman">
+  <svg class="deco flip" style="right:-90px;top:10px;width:280px;opacity:.3" viewBox="0 0 300 520" aria-hidden="true"><use href="#tree" width="300" height="520"/></svg>
+  <div class="title"><h2>Pengalaman Kerja</h2></div>
+  <div class="timeline" id="g-pengalaman">
+    <article class="card">
+      <i class="dot"></i>
+      <div class="slot" style="aspect-ratio:21/6"><img src="https://media.licdn.com/dms/image/v2/D563DAQGacNIxBfPrWw/image-scale_191_1128/B56Z2cUqD8HgAc-/0/1776444154953/pt_bina_inovasi_global_binovara_cover?e=2147483647&v=beta&t=tSPfsNOAimPeBTB0C-bBfw33IAMun8Rm_4Fd9hkJ7Rc" style="object-fit: cover;" alt="Logo Perusahaan"></div>
+      <h3>PT. Bina Inovaasi Global (Binovara)</h3>
+      <p class="meta">Assocate Member System Analyst · Februari 2026 – Sekarang</p>
+      <ul>
+        <li>Melakukan analisis sistem dan pengembangan aplikasi.</li>
+        <li>Membuat draft dokumentasi teknis seperti test case ,dan FSD.</li>
+        <li>Melakukan testing untuk menguji fitur website.</li>
+        <li>Membuat design figma setiap ada fitur baru untuk website.</li>
+      </ul>
+    </article>
+  </div>
+  <button class="add" data-add="g-pengalaman" >＋ Tambah pengalaman</button>
+</section>
+
+<footer id="kontak">
+  <div class="fgrid">
+    <div>
+      <h4>Info Kontak</h4>
+      <p>sky.s.louisimmanuelphan@gmail.com</p>
+      <p>+62 895-2050-1620</p>
+      <p>Jakarta, Indonesia</p>
+    </div>
+    <div>
+      <h4>Tautan Cepat</h4>
+      <ul><li><a href="#profile">Profile</a></li><li><a href="#pendidikan">Pendidikan</a></li><li><a href="#sertifikat">Sertifikat</a></li></ul>
+    </div>
+    <div>
+      <h4>Jelajahi</h4>
+      <ul><li><a href="#project">Project</a></li><li><a href="#pengalaman">Pengalaman</a></li></ul>
+    </div>
+  </div>
+  <div class="copy"><span contenteditable="false">© 2026 Louis Immanuel Phan</span></div>
+</footer>
+
+<script>
+(function(){
+  function setImg(slot,file){
+    if(!file||!file.type.startsWith('image/'))return;
+    var r=new FileReader();
+    r.onload=function(){
+      var old=slot.querySelector('img'); if(old)old.remove();
+      var im=new Image(); im.src=r.result; im.alt='Gambar unggahan';
+      slot.appendChild(im); slot.classList.add('has');
+    };
+    r.readAsDataURL(file);
+  }
+  document.addEventListener('click',function(e){
+    var s=e.target.closest('.slot');
+    if(s&&e.target.tagName!=='INPUT'){s.querySelector('input').click();return}
+    var x=e.target.closest('.x');
+    if(x){x.closest('.card').remove();return}
+    var a=e.target.closest('.add');
+    if(a){
+      var g=document.getElementById(a.dataset.add), c=g.lastElementChild;
+      if(!c)return;
+      var n=c.cloneNode(true);
+      n.querySelectorAll('.slot').forEach(function(sl){var i=sl.querySelector('img');if(i)i.remove();sl.classList.remove('has')});
+      var ox=n.querySelector('.x'); if(ox)ox.remove();
+      g.appendChild(n); addX(n);
+    }
+  });
+  document.addEventListener('change',function(e){
+    if(e.target.matches('.slot input'))setImg(e.target.closest('.slot'),e.target.files[0]);
+  });
+  ['dragover','dragleave','drop'].forEach(function(t){
+    document.addEventListener(t,function(e){
+      var s=e.target.closest&&e.target.closest('.slot'); if(!s)return;
+      e.preventDefault();
+      s.classList.toggle('drag',t==='dragover');
+      if(t==='drop')setImg(s,e.dataTransfer.files[0]);
+    });
+  });
+  function addX(card){
+    if(card.closest('#profile'))return;
+    var b=document.createElement('button');
+    b.className='x'; b.type='button'; b.setAttribute('aria-label','Hapus kartu'); b.textContent='×';
+    card.appendChild(b);
+  }
+  document.querySelectorAll('.card').forEach(addX);
+})();
+</script>
+</body>
+</html>
